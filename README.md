@@ -227,14 +227,18 @@ npm run dev
 
 | Script        | Description                              |
 | ------------- | ----------------------------------       |
-| npm dev       | Run the application in development mode. |
-| npm build     | Create production-ready builds.          |
-| npm lint      | Show eslint errors.                      |
-| npm lint:fix  | Fix eslint errors.                       |
-| npm format    | Apply prettier formatting to all files.  |
-| npm test      | Execute tests.                           |
-| npm init-db   | Init database locally to get started     |
-| npm init-mock-users | Populate mock users locally        |
+| npm run dev       | Run the application in development mode. |
+| npm run build     | Create production-ready builds.          |
+| npm run lint      | Show eslint errors.                      |
+| npm run lint:fix  | Fix eslint errors.                       |
+| npm run format    | Apply prettier formatting to all files.  |
+| npm run test      | Execute tests.                           |
+| npm run init-db   | Init database locally to get started     |
+| npm run init-mock-users | Populate mock users locally        |
+| npm run migration:generate | Generate a migration db with type-orm|
+|npm run migration:run | run the last migration generated in migration folder |
+| npm run migration:revert | revert the last migration |
+
 
 
 
@@ -251,21 +255,14 @@ Please contact the members of this list:
 
 <!-- Slack space -->
 
-<!-- IMAGE SHIELDS -->
-[React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=008B4A
-[React-url]: https://reactjs.org/
-[Javascript.js]: https://img.shields.io/badge/Javascript-20232A?style=for-the-badge&logo=javascript&logoColor=008B4A
-[Javascript-url]: https://developer.mozilla.org/es/docs/Web/JavaScript
-[Redux.js]: https://img.shields.io/badge/Redux-20232A?style=for-the-badge&logo=redux&logoColor=008B4A
-[Redux-url]: https://es.redux.js.org/
-[Mui.js]: https://img.shields.io/badge/Mui-20232A?style=for-the-badge&logo=mui&logoColor=008B4A
-[Mui-url]: https://mui.com/
-[Axios.js]: https://img.shields.io/badge/Axios-20232A?style=for-the-badge&logo=axios&logoColor=008B4A
-[Axios-url]: https://axios-http.com/docs/intro
-[Node.js]: https://img.shields.io/badge/NodeJS-20232A?style=for-the-badge&logo=node.js&logoColor=008B4A
-[Node-url]: https://nodejs.org/en
-[PostgreSQL.js]: https://img.shields.io/badge/PostgreSQL-20232A?style=for-the-badge&logo=postgresql&logoColor=008B4A
-[PostgreSQL-url]: https://www.postgresql.org/
-[IBMCLOUD.js]: https://img.shields.io/badge/IBM_Cloud-20232A?style=for-the-badge&logo=ibmcloud&logoColor=008B4A
-[IBMCLOUD-url]: https://cloud.ibm.com/
+## Index
+
+Please take a look at the available endpoints until far. 
+
+** Remember to add any endpoint you develope to their respective md file.
+
+
+- [Auth](./docs/auth.endpoint.md)
+- [User](./docs/user.endpoint.md)
+- [Organization User](./docs/userCooperative.endpoint.md)
 
