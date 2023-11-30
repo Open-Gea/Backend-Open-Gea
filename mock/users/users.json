@@ -1,0 +1,215 @@
+
+[
+    {
+        "name": "admin",
+        "lastname": "test",
+        "phone": "1231234",
+        "country": "Argentina",
+        "email": "admin@test.com",
+        "username": "admin",
+        "password": "admin",
+        "status": "ACTIVE",
+        "role": "ADMIN"
+    },
+    {
+        "name": "Gaile",
+        "lastname": "Beesey",
+        "email": "gbeesey0@parallels.com",
+        "username": "gbeesey0",
+        "country": "Argentina",
+        "phone": "218 858 3929",
+        "password": "fU7cFO_Cgw",
+        "status": "ACTIVE",
+        "role": "USER"
+      }, {
+        "name": "Katuscha",
+        "lastname": "Fullicks",
+        "email": "kfullicks1@addtoany.com",
+        "username": "kfullicks1",
+        "country": "Argentina",
+        "phone": "992 245 0783",
+        "password": "aS0XjVQ4Ed>$Ng",
+        "status": "ACTIVE",
+        "role": "USER"
+      }, {
+        "name": "Duncan",
+        "lastname": "Perone",
+        "email": "dperone2@pen.io",
+        "username": "dperone2",
+        "country": "Ecuador",
+        "phone": "342 277 8851",
+        "password": "uY8Mf8yB%.8lyNGT",
+        "status": "ACTIVE",
+        "role": "USER"
+      }, {
+        "name": "Lionello",
+        "lastname": "McCarthy",
+        "email": "lmccarthy3@newsvine.com",
+        "username": "lmccarthy3",
+        "country": "Costa Rica",
+        "phone": "958 769 8473",
+        "password": "mV5*$AA(MOvn",
+        "status": "ACTIVE",
+        "role": "USER"
+      }, {
+        "name": "Helge",
+        "lastname": "Enders",
+        "email": "henders4@networkadvertising.org",
+        "username": "henders4",
+        "country": "Colombia",
+        "phone": "210 138 2606",
+        "password": "eV12m#{a+tp3x#",
+        "status": "DISABLED",
+        "role": "USER"
+      }, {
+        "name": "Siegfried",
+        "lastname": "Wittman",
+        "email": "swittman5@earthlink.net",
+        "username": "swittman5",
+        "country": "Argentina",
+        "phone": "262 466 1137",
+        "password": "uJ4@&Mb9xh(Za",
+        "status": "INACTIVE",
+        "role": "USER"
+      }, {
+        "name": "Alie",
+        "lastname": "Aliman",
+        "email": "aaliman6@webs.com",
+        "username": "aaliman6",
+        "country": "Argentina",
+        "phone": "587 810 5159",
+        "password": "uX0A`l#j",
+        "status": "ACTIVE",
+        "role": "USER"
+      }, {
+        "name": "See",
+        "lastname": "Tramel",
+        "email": "stramel7@cyberchimps.com",
+        "username": "stramel7",
+        "country": "Argentina",
+        "phone": "753 116 5844",
+        "password": "dL4\\?@zX*ZIg",
+        "status": "ACTIVE",
+        "role": "USER"
+      }, {
+        "name": "Rocky",
+        "lastname": "Upson",
+        "email": "rupson8@hatena.ne.jp",
+        "username": "rupson8",
+        "country": "Argentina",
+        "phone": "107 846 6510",
+        "password": "eG4X|XVkSro",
+        "status": "INACTIVE",
+        "role": "USER"
+      }, {
+        "name": "Sella",
+        "lastname": "Clapshaw",
+        "email": "sclapshaw9@wufoo.com",
+        "username": "sclapshaw9",
+        "country": "Costa Rica",
+        "phone": "854 309 7816",
+        "password": "vH8{fCi`",
+        "status": "ACTIVE",
+        "role": "USER"
+      }, {
+        "name": "Regine",
+        "lastname": "Cranefield",
+        "email": "rcranefielda@linkedin.com",
+        "username": "rcranefielda",
+        "country": "Colombia",
+        "phone": "158 643 5587",
+        "password": "sH1m\\)|(0",
+        "status": "INACTIVE",
+        "role": "USER"
+      }, {
+        "name": "Shurlock",
+        "lastname": "Pittway",
+        "email": "spittwayb@japanpost.jp",
+        "username": "spittwayb",
+        "country": "Argentina",
+        "phone": "768 686 7986",
+        "password": "oA3,>kS8T('c",
+        "status": "ACTIVE",
+        "role": "USER"
+      }, {
+        "name": "Leigh",
+        "lastname": "Polding",
+        "email": "lpoldingc@examiner.com",
+        "username": "lpoldingc",
+        "country": "Colombia",
+        "phone": "104 994 7105",
+        "password": "uW4O,WX{>1&vQEV",
+        "status": "ACTIVE",
+        "role": "USER"
+      }, {
+        "name": "Baxy",
+        "lastname": "Grinnov",
+        "email": "bgrinnovd@issuu.com",
+        "username": "bgrinnovd",
+        "country": "Honduras",
+        "phone": "791 720 5336",
+        "password": "vA26nO_u",
+        "status": "INACTIVE",
+        "role": "USER"
+      }, {
+        "name": "Heidie",
+        "lastname": "Ney",
+        "email": "hneye@weebly.com",
+        "username": "hneye",
+        "country": "Argentina",
+        "phone": "239 539 2993",
+        "password": "bQ8@/FNV<b",
+        "status": "INACTIVE",
+        "role": "USER"
+      }, {
+        "name": "Connie",
+        "lastname": "Brownbridge",
+        "email": "cbrownbridgef@yellowpages.com",
+        "username": "cbrownbridgef",
+        "country": "Ecuador",
+        "phone": "504 133 8029",
+        "password": "mB1unc62\\JK",
+        "status": "ACTIVE",
+        "role": "USER"
+      }, {
+        "name": "Davy",
+        "lastname": "Nesey",
+        "email": "dneseyg@google.cn",
+        "username": "dneseyg",
+        "country": "Argentina",
+        "phone": "438 423 8395",
+        "password": "hE6yT%LyeOzz<",
+        "status": "INACTIVE",
+        "role": "USER"
+      }, {
+        "name": "Demetra",
+        "lastname": "Matevushev",
+        "email": "dmatevushevh@stumbleupon.com",
+        "username": "dmatevushevh",
+        "country": "Argentina",
+        "phone": "913 389 6759",
+        "password": "cD9E5f1kp)",
+        "status": "DISABLED",
+        "role": "USER"
+      }, {
+        "name": "Marco",
+        "lastname": "Girodier",
+        "email": "mgirodieri@privacy.gov.au",
+        "username": "mgirodieri",
+        "country": "Honduras",
+        "phone": "975 248 8734",
+        "password": "mT2wt~qjvvy!pqTw",
+        "status": "INACTIVE",
+        "role": "USER"
+      }, {
+        "name": "Minne",
+        "lastname": "Hamil",
+        "email": "mhamilj@unc.edu",
+        "username": "mhamilj",
+        "country": "Honduras",
+        "phone": "729 554 2906",
+        "password": "sN4{vkd8jm",
+        "status": "ACTIVE",
+        "role": "USER"
+      }
+]
