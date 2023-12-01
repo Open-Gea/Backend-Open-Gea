@@ -47,10 +47,6 @@ And we have these modules available for Administrators:
 
 Participation is welcomed from software developers, designers, testers, agronomists/agri experts/soil experts, IoT engineers, researchers, students, farmers, and others who can help improve the quality and value of the solution for small farmers around the world.
    
-
-## Getting Started
-
-
 ### Technologies
 
 * [![PostgreSQL][PostgreSQL.js]][PostgreSQL-url]
@@ -71,15 +67,19 @@ Specifically these features in the Cloud:
 - <b> Monitoring and Logging: </b> To keep an eye on the system's health, performance, and potential issues, the IBM log Analysis service has been incorporated. This allows for real-time tracking, analysis, and prompt action on any anomalies.
 
   <img src="./assets/images/IBM Cloud Diagram.png"  width ="80%" height="10%">
-  
-###  Open YvY - backend Setup Guide
+
+## Getting Started
 
 
-### Cloning the Repository
+### Cloning the Repository from github
 
-
+https:
 ```
-https://github.com/open-yvy
+git clone https://github.com/Open-YvY/Backend-Open-YvY.git
+```
+or ssh:
+```
+git clone git@github.com:Open-YvY/Backend-Open-YvY.git
 ```
 
 ```
@@ -97,7 +97,7 @@ npm install
 
 To set up and run the yvy-backend for a local environment:
 
--  Create a new database for the project using Postgres.
+-  Create a new database for the project using Postgres. Database name must be equal to the environment key called *PG_DATABASE_LOCAL*
 
 - Create a `.env` file in the root directory of your `yvy-backend` and populate with the following:
    
@@ -110,15 +110,17 @@ PG_PASSWORD_LOCAL= # Password for the user
 PG_DATABASE_LOCAL= # Name of the database to connect to
 PORT= # Port number for your application server
 JWT_SECRET= # Secret key for JSON Web Tokens (can be whatever you like)
-
-
+YVY_URL_LOCAL= # http://localhost/{frontend-port} the port where yvy app will run in navigator locally
+COUNTRIES_API=https://flagcdn.com #(open api)
 ```
 
 ### Special Indication for the rest of environments
 
 #### Mailing
-For mailing the original project use gmail service. 
+For mailing the yvy project use gmail service. 
 You can use your own gmail account or change the mailing service by develope specific one accourding to your needs.
+
+Check out how to create your own gmail password app within your google account througth this [link](https://support.google.com/accounts/answer/185833?hl=en)
 
 The modules that use mailing service are:
 
@@ -138,11 +140,14 @@ For files manager he original yvy use Cloud Object Storage from IBM Cloud servic
 
 Feel free to use the any other cloud object storage or change the [process-file middleware](./src/middlewares/processFiles.middleware.ts) by using another tech to storage files.
 
+Check out [localstack](https://www.localstack.cloud/). It can brings you the solution emilating lot of cloud services locally.
+
+
 The modules that use this keys environments are:
 
-* Historical Records
-* Farms
-* Sustainability Self-Assessment
+* Historical Records (uploads documents)
+* Farms (upload documents)
+* Sustainability Self-Assessment (upload documents)
 
 ```js
 COS_ENDPOINT= # Endpoint for cloud object storage
@@ -205,6 +210,14 @@ npm run init-db
 
 You should see the message `Postgres Tables Created`. Check the tables in your postgres local database
 
+### Init Countries List
+
+YvY use an official country list from an api. But to simplify, it get all the countries with their international code and english and spanish name and put it in their database, using the next script:
+
+```
+npm run countries-load
+```
+
 ### Init Mock Users (Optional)
 
 To populate the database with 1 admin user, and 20 another regular user, you can run the follow script:
@@ -266,3 +279,20 @@ Please take a look at the available endpoints until far.
 - [User](./docs/user.endpoint.md)
 - [Organization User](./docs/userCooperative.endpoint.md)
 
+<!-- IMAGE SHIELDS -->
+[React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=008B4A
+[React-url]: https://reactjs.org/
+[Javascript.js]: https://img.shields.io/badge/Javascript-20232A?style=for-the-badge&logo=javascript&logoColor=008B4A
+[Javascript-url]: https://developer.mozilla.org/es/docs/Web/JavaScript
+[Redux.js]: https://img.shields.io/badge/Redux-20232A?style=for-the-badge&logo=redux&logoColor=008B4A
+[Redux-url]: https://es.redux.js.org/
+[Mui.js]: https://img.shields.io/badge/Mui-20232A?style=for-the-badge&logo=mui&logoColor=008B4A
+[Mui-url]: https://mui.com/
+[Axios.js]: https://img.shields.io/badge/Axios-20232A?style=for-the-badge&logo=axios&logoColor=008B4A
+[Axios-url]: https://axios-http.com/docs/intro
+[Node.js]: https://img.shields.io/badge/NodeJS-20232A?style=for-the-badge&logo=node.js&logoColor=008B4A
+[Node-url]: https://nodejs.org/en
+[PostgreSQL.js]: https://img.shields.io/badge/PostgreSQL-20232A?style=for-the-badge&logo=postgresql&logoColor=008B4A
+[PostgreSQL-url]: https://www.postgresql.org/
+[IBMCLOUD.js]: https://img.shields.io/badge/IBM_Cloud-20232A?style=for-the-badge&logo=ibmcloud&logoColor=008B4A
+[IBMCLOUD-url]: https://cloud.ibm.com/

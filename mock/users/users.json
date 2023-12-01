@@ -11,17 +11,7 @@
         "status": "ACTIVE",
         "role": "ADMIN"
     },
-    {
-        "name": "Gaile",
-        "lastname": "Beesey",
-        "email": "gbeesey0@parallels.com",
-        "username": "gbeesey0",
-        "country": "Argentina",
-        "phone": "218 858 3929",
-        "password": "fU7cFO_Cgw",
-        "status": "ACTIVE",
-        "role": "USER"
-      }, {
+     {
         "name": "Katuscha",
         "lastname": "Fullicks",
         "email": "kfullicks1@addtoany.com",

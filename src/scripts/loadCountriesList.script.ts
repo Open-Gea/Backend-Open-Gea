@@ -42,7 +42,7 @@ async function resetUserDatabase() {
 
  
   } catch (error) {
-    console.error('Error al reiniciar la base de datos de usuarios:', error);
+    console.error('Could not load the countries:', error);
     
   } finally {
     await connection.destroy()
