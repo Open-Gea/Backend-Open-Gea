@@ -8,11 +8,13 @@ export class UserService {
   ) {}
 
   async read(id: string): Promise<User | undefined> {
-    return this.repository.read(id);
+    const result = await this.repository.read(id);
+    delete result?.password;
+    return result;
   }
 
   async update(id: string, item: User, profilePictureFile: Express.Multer.File | undefined): Promise<boolean> {
-    if (await this.repository.findById(id)) {
+    if (await this.repository.read(id)) {
 
       if (profilePictureFile) {
         // Store the binary data of the image as a Buffer
@@ -35,19 +37,21 @@ export class UserService {
   }
 
   async findByEmail(email: string): Promise<User | undefined> {
-    return this.repository.findByEmail(email);
+    const result = await this.repository.findByEmail(email);
+    delete result?.password;
+    return result;
   }
 
-  async findById(id: string): Promise<User | undefined> {
-    return this.repository.findById(id);
-  }
+  // async findById(id: string): Promise<User | undefined> {
+  //   return this.repository.findById(id);
+  // }
 
-  async findByIdNoRelations(id: string): Promise<User | undefined> {
-    return this.repository.findByIdNoRelations(id);
-  }
+  // async findByIdNoRelations(id: string): Promise<User | undefined> {
+  //   return this.repository.findByIdNoRelations(id);
+  // }
 
   async disable(id: string): Promise<boolean> {
-    const user = await this.repository.findById(id);
+    const user = await this.repository.read(id);
     if (!user) {
       throw new YvYError('User not found', 404,'User not found');
     }
@@ -55,7 +59,7 @@ export class UserService {
   }
 
   async acceptTermsConditions(id: string): Promise<boolean> {
-    const foundUser = await this.findByIdNoRelations(id);
+    const foundUser = await this.read(id);
     if (!foundUser) {
       throw new YvYError('User not found', 404,'User not found');
     }

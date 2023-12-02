@@ -38,7 +38,7 @@ export class EvaluationSevice {
   } */
 
   async create(item: Evaluation): Promise<Evaluation | undefined> {
-    const user = await this.userRepository.findById(item.user.id);
+    const user = await this.userRepository.read(item.user.id);
     if (!user) {
       throw new YvYError('Evaluation not found', 404,'Evaluation not found');
     }

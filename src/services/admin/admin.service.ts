@@ -27,7 +27,11 @@ export class AdminService {
   }
 
   async findByCountry(country: string): Promise<User[]> {
-    return this.repository.findByCountry(country);
+    //return this.repository.findByCountry(country);
+    return (await this.repository.findByCountry(country)).map((user) => {
+      delete user.password;
+      return user;
+    });
   }
 
   async disable(id: string, isAdmin: boolean): Promise<boolean> {
@@ -39,7 +43,7 @@ export class AdminService {
       }
       return this.coopRepository.disable(id);
     } else {
-      const user = await this.repository.findById(id);
+      const user = await this.repository.read(id);
       if (!user) {
         throw new YvYError('User not found', StatusCodes.NOT_FOUND, 'User not found');
       }
@@ -57,7 +61,7 @@ export class AdminService {
       }
       return this.coopRepository.enable(id);
     } else {
-      const user = await this.repository.findById(id);
+      const user = await this.repository.read(id);
       if (!user) {
         throw new YvYError('User not found', StatusCodes.NOT_FOUND, 'User not found');
       }
@@ -67,7 +71,7 @@ export class AdminService {
   }
 
   async isUserActive(id: string): Promise<boolean> {
-    const user = await this.repository.findById(id);
+    const user = await this.repository.read(id);
     if (!user) {
       throw new YvYError('User not found', StatusCodes.NOT_FOUND, 'User not found');
     }

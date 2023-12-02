@@ -42,6 +42,7 @@ export class GenericDAOV2<Entity extends ObjectLiteral> implements GenericRepo<E
   async read(id: string): Promise<Entity | undefined> {
     const result = 
     await this.repository.createQueryBuilder('alias')
+    .loadAllRelationIds()
     .where('alias.id = :id', {id})
     .getOne()
 

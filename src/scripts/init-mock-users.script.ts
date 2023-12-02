@@ -15,6 +15,7 @@ async function initMockUser() {
     const jsonMockUsers = fs.readFileSync(path.join(__dirname, '../../mock/users/users.json'), 'utf-8');
     const mockUsers = JSON.parse(jsonMockUsers);
     
+    await connection.query('DELETE FROM users')
 
     await connection.transaction(async transactionalEntityManager => {
       const userRepository = transactionalEntityManager.getRepository(UserEntity);

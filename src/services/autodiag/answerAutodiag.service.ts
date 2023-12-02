@@ -43,7 +43,7 @@ export class AnswersAutodiagService{
   async create(item: any): Promise<AnswersAutodiag | undefined> {
         
     const userId = (item.user as any) as string;
-    const user = await this.userRepository.findById(userId);
+    const user = await this.userRepository.read(userId);
     if (!user) {
       throw new YvYError('User not found', 404, 'User not found');
     }

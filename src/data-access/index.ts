@@ -71,6 +71,7 @@ import { UserDAO } from "./user/user.dao";
 import { UserCooperativeDAO } from "./userCooperative/userCooperative.dao";
 import { getConnection } from "../config/getConnection";
 import PostgresDataSource from "../config/data-source";
+import { UserEntity } from "../entities/user/user.entity";
 
 
 
@@ -128,7 +129,8 @@ export class YvYRepository {
   
     public async initialize() {
       this.connection = await getConnection(PostgresDataSource);
-      this.userRepo = new UserDAO(this.connection);
+      //this.userRepo = new UserDAO(this.connection);
+      this.userRepo = new UserDAO();
       this.farmRepo = new FarmDao(this.connection);
       this.mediaRepo = new MediaDAO(this.connection);
       this.carbonFootprintRepo = new CarbonFootPrintDAO(this.connection);

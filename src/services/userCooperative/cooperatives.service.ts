@@ -188,7 +188,7 @@ export class CooperativesService {
       throw new YvYError('Cooperative not found', 404,'Cooperative not found' );
     }
   
-    const user = await this.usersRepository.findById(userId);
+    const user = await this.usersRepository.read(userId);
     if (!user) {
       throw new YvYError('User not found', 404,'User not found');
     }
