@@ -1,3 +1,4 @@
+import { DataSource } from 'typeorm';
 import { UserEntity } from '../../entities/user/user.entity';
 import { User, UserStatus } from '../../models/user/user';
 import { UserRepository } from '../../repositories/user/user.repository';
@@ -5,8 +6,8 @@ import { GenericDAOV2 } from '../utils/generic.dao';
 
 
 export class UserDAO extends GenericDAOV2<UserEntity> implements UserRepository{
-    constructor(){
-      super(UserEntity)
+    constructor(connection: DataSource){
+      super(connection,UserEntity)
     }
 
   async findByEmail(email: string): Promise<User> {

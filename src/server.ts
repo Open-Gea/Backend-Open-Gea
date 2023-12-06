@@ -11,18 +11,25 @@ import { BaseError } from './utils/error';
 
 import cors from "cors";
 
-import router from "./routes";
 import dotenv from 'dotenv';
-import { getConnection } from "./config/getConnection";
 import PostgresDataSource from "./config/data-source";
+import { YvYRepository } from "./data-access";
+import { YvYService } from "./services";
+import { YvYRouter } from "./routes";
 
 dotenv.config();
 
 export default async function YVYServer() {
-  const connection = await getConnection(PostgresDataSource);
-  
+ 
   const port = process.env.PORT || SERVER_CONFIG.PORT;
-
+  const yvyRepo = new YvYRepository();
+  await yvyRepo.initialize(PostgresDataSource);
+  const yvyRoutes = new YvYRouter(
+    new YvYService(
+      yvyRepo
+    )
+  ).getRouter();
+  
   const app = express()
     .use(express.json())
     .use(morgan("dev"))
@@ -41,7 +48,7 @@ export default async function YVYServer() {
       next();
     })
 
-    .use(router)
+    .use(yvyRoutes)
 
     .get("/", (_, res: Response) => {
       res.send("Hello World!");
@@ -51,16 +58,6 @@ export default async function YVYServer() {
       res.send("deploy OK!");
     })
 
-    .get("/health", async (_, res: Response) => {
-      const isDbConnected = connection.isInitialized;
-      const health = {
-        timestamp: new Date(),
-        status: isDbConnected ? "healthy" : "warning",
-        db: isDbConnected ? "connected" : "disconnected",
-      };
-
-      res.status(StatusCodes.OK).json(health);
-    })
     .use((error: BaseError, _req: Request, res: Response) => {
       res.status(error.code).send({ message: error.message });
     });

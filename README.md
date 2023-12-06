@@ -1,4 +1,4 @@
-# Open YvY - Back End
+# Open YvY - Back End v2.0.0
 
 ## Types of Users
 
@@ -102,7 +102,8 @@ To set up and run the yvy-backend for a local environment:
 - Create a `.env` file in the root directory of your `yvy-backend` and populate with the following:
    
 ```js
-NODE_ENV=local
+NODE_ENV=local # use it always in local unless you preffered to share a better cloud solution for yvy
+BUILD= # must be undefinde unless you need to build the project and run it using node command in production
 PG_HOST_LOCAL= # The hostname (e.g., localhost)
 PG_PORT_LOCAL= # Server port (typically 5432)
 PG_USER_LOCAL= # Database username
@@ -159,9 +160,7 @@ FILE_BUCKET= # Bucket name for file storage in the cloud
 
 ### Wheater
 
-YvY offers wheather info to their users by using the following external services:
-- API Wheather
-- Meteostat API
+YvY offers wheather info to their users by using the following the external service API Wheather
 
 Feel free to use another services or api's for these modules or contribute to the project by finding free services that allows the same values for open-yvy
 
@@ -170,10 +169,10 @@ Check the source code that use these keys:
 - [Seasonal Forecast](./src/services/apiWeather/seasonalForecast.service.ts)
 - [Wheather Forecas](./src/services/apiWeather/weatherForecast.service.ts)
 
-
+Check out this [dev tools](https://developer.ibm.com/apis/catalog/weather--environmental-intelligence-suite_historical-apis/Weather%20Company%20Data%20-%20API%20Common%20Usage%20Guide) by IBM
 
 ```js
-
+BASE_API_WEATHER=https://api.weather.com/v2
 WEATHER_NEEDS_15= # url of wheater needs for 15 days
 WEATHER_FORECAST_AGRICULTURE_15= # url of forecast agriculture
 API_KEY_WEATHER= # api key to use the service

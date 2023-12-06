@@ -2,11 +2,12 @@ import { GenericDAOV2 } from "../utils/generic.dao";
 import { AnswerAutodiagEntityV2 } from "../../entities/autodiagV2/answer.entity";
 import { AnswerAutodiagRepositoryV2 } from "../../repositories/autodiagV2/answer.repository";
 import { AnswerAutodiagV2 } from "../../models/autodiagV2/answer";
+import { DataSource } from "typeorm";
 
 
 export class AnswerAutoDiagDAOV2 extends GenericDAOV2<AnswerAutodiagEntityV2> implements AnswerAutodiagRepositoryV2 {
-  constructor() {
-    super(AnswerAutodiagEntityV2);
+  constructor(connection:DataSource) {
+    super(connection,AnswerAutodiagEntityV2);
   }
   
   async getAllByUser(userId: string): Promise<AnswerAutodiagV2[]> {

@@ -70,8 +70,6 @@ import { UserCooperativeRequestsDAO } from "./userCooperative/userCooperativeReq
 import { UserDAO } from "./user/user.dao";
 import { UserCooperativeDAO } from "./userCooperative/userCooperative.dao";
 import { getConnection } from "../config/getConnection";
-import PostgresDataSource from "../config/data-source";
-import { UserEntity } from "../entities/user/user.entity";
 
 
 
@@ -127,10 +125,9 @@ export class YvYRepository {
 
     constructor () {}
   
-    public async initialize() {
-      this.connection = await getConnection(PostgresDataSource);
-      //this.userRepo = new UserDAO(this.connection);
-      this.userRepo = new UserDAO();
+    public async initialize(dataSource: DataSource) {
+      this.connection = await getConnection(dataSource);
+      this.userRepo = new UserDAO(this.connection);
       this.farmRepo = new FarmDao(this.connection);
       this.mediaRepo = new MediaDAO(this.connection);
       this.carbonFootprintRepo = new CarbonFootPrintDAO(this.connection);
@@ -160,9 +157,9 @@ export class YvYRepository {
       this.settingQrRepo = new SettingQrDAO(this.connection);
       this.questionAutodiagRepo = new QuestionAutodiagDAO(this.connection);
       this.answerAutodiagRepo = new AnswerAutodiagDAO(this.connection);
-      this.categoryAutodiagRepo = new GenericDAOV2(CategoryAutodiagEntity);
-      this.questionAutodiagRepoV2 = new GenericDAOV2(QuestionAutodiagEntityV2);
-      this.answerAutodiagRepoV2 = new AnswerAutoDiagDAOV2();
+      this.categoryAutodiagRepo = new GenericDAOV2(this.connection,CategoryAutodiagEntity);
+      this.questionAutodiagRepoV2 = new GenericDAOV2(this.connection,QuestionAutodiagEntityV2);
+      this.answerAutodiagRepoV2 = new AnswerAutoDiagDAOV2(this.connection);
       this.countryRepo = new CountryDao(this.connection);
       this.countriesListRepo = new CountriesListDao(this.connection);
 
@@ -179,9 +176,7 @@ export class YvYRepository {
     }
     
     
-  }
-
-
+   }
 
 
 

@@ -1,7 +1,3 @@
-//import { agrochemicalRepo, answerAutodiagRepo, answerAutodiagRepoV2, bioinputsRepo, carbonFootprintRepo, categoryAutodiagRepo, cooperativeRepo, countriesListRepo, countryRepo, coverManagementRepository, cropCoefficientRepo, cropManagementRepository, cropRotationRepository, emissionFactorRepo, evaluationRepo, farmRepo, fertilizationRepository, fertilizerRepo, generalRepo, gwpRepo, laborsRepo, lotRepo, mediaRepo, performancesRepo, phytoRepo, prodInfoRepo, productRepo, pruningManagementRepository, questionAutodiagRepo, questionAutodiagRepoV2, reportRepo, revenuesExpensesRepo, salesRepo, settingQrRepo, soilsRepo, sowingRepo, staffRepo, supplierRepo, tillageRepository, userCoopRepository, userCooperativeRequestsRepo, userRepo } from "../data-access";
-//import { carbonFootprintRepo, emissionFactorRepo, evaluationRepo, farmRepo, gwpRepo, mediaRepo, productRepo, userRepo } from "../data-access";
-//import { initializeRepositories } from "../data-access";
-import { YvYRepository } from "../data-access";
 import { CategoryAutodiagEntity } from "../entities/autodiagV2/category.entity";
 import { QuestionAutodiagEntityV2 } from "../entities/autodiagV2/question.entity";
 import { AgrochemicalEntity } from "../entities/records/agrochemical.entity";
@@ -48,6 +44,7 @@ import { UserService } from "./user/user.service";
 import { UserCooperativeRequestsService } from "./userCooperative/userCooperativeRequests.service";
 import { WaterFootprintService } from "./waterFootprint/waterFootprint.service";
 import { WeatherForecastService } from "./apiWeather/weatherForecast.service";
+import { YvYRepository } from "../data-access";
 
 
 export class YvYService{
@@ -100,11 +97,11 @@ export class YvYService{
     public questionAutodiagServiceV2: GenericService<QuestionAutodiagEntityV2>
     public answerAutodiagServiceV2: AnswerAutodiagServiceV2
 
-    constructor() {};
+    constructor(r: YvYRepository) {
+        this.initialize(r)
+    };
 
-    public async initialize(){
-        const r = new YvYRepository();
-        await r.initialize();
+    private async initialize(r: YvYRepository){
 
         this.userService = new UserService(r.userRepo);
         this.farmService = new FarmService(r.farmRepo);
@@ -152,12 +149,11 @@ export class YvYService{
         this.userCooperativeRequestsService= new UserCooperativeRequestsService(r.userCooperativeRequestsRepo)
         this.categoryAutodiagService = new GenericService(r.categoryAutodiagRepo);
         this.questionAutodiagServiceV2 = new GenericService(r.questionAutodiagRepoV2);
-        this.answerAutodiagServiceV2 = new AnswerAutodiagServiceV2(r.answerAutodiagRepoV2);
+        this.answerAutodiagServiceV2 = new AnswerAutodiagServiceV2(r.answerAutodiagRepoV2, r.questionAutodiagRepoV2, r.categoryAutodiagRepo);
 
     }
 
 }
-
 
 
 

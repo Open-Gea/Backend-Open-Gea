@@ -8,11 +8,9 @@ export class GenericDAOV2<Entity extends ObjectLiteral> implements GenericRepo<E
   protected repository: Repository<Entity>;
   protected entityMetadata: EntityMetadata;
 
-  constructor(entity: { new (): Entity }) {
-    getConnection(PostgresDataSource).then((connection) => {
+  constructor(connection: DataSource,entity: { new (): Entity }) {
       this.repository = connection.getRepository(entity);
       this.entityMetadata = connection.getMetadata(entity);
-    });
   }
 
   async search(query?: string | undefined): Promise<Entity[]> {

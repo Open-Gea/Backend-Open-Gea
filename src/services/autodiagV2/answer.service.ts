@@ -9,12 +9,15 @@ import { DataSource } from "typeorm";
 
 export default class AnswerAutodiagServiceV2 extends GenericService<AnswerAutodiagV2> {
    
-  private questionRepo: GenericRepo<QuestionAutodiagEntityV2>
-  private categoryRepo: GenericRepo<CategoryAutodiagEntity>
-  constructor(private answerRepository: AnswerAutodiagRepositoryV2) {
+  
+  constructor(
+    private answerRepository: AnswerAutodiagRepositoryV2,
+    private questionRepo: GenericRepo<QuestionAutodiagEntityV2>,
+    private categoryRepo: GenericRepo<CategoryAutodiagEntity>
+    ) {
     super(answerRepository);
-    this.questionRepo = new GenericDAOV2(QuestionAutodiagEntityV2);
-    this.categoryRepo = new GenericDAOV2(CategoryAutodiagEntity);
+    this.questionRepo = questionRepo;
+    this.categoryRepo = categoryRepo;
   }
   async getAllByUser(userId: string): Promise<AnswerAutodiagV2[]>{
     return await this.answerRepository.getAllByUser(userId)

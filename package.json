@@ -1,6 +1,6 @@
 {
   "name": "yvy-backend",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "scripts": {
     "build": "tsc -p .",
     "dev": "cross-env $(cat .env | grep NODE_ENV) nodemon src/index.ts",
@@ -8,10 +8,6 @@
     "init-mock-users": "cross-env NODE_ENV=local ts-node src/scripts/init-mock-users.script.ts",
     "start": "ts-node src/index.ts",
     "test": "echo \"No test specified\"",
-    "lint": "eslint src",
-    "lint:test": "eslint test",
-    "lint:fix": "eslint src --fix",
-    "prepare": "husky install",
     "countries-load": "cross-env $(cat .env | grep NODE_ENV) ts-node src/scripts/loadCountriesList.script.ts",
     "clean:deps": "rm -rf node_modules && rm package-lock.json",
     "typeorm": "typeorm-ts-node-commonjs",
@@ -21,14 +17,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fundacionplan21/yvy-backend.git"
+    "url": "git+https://github.com/Open-YvY/Backend-Open-YvY"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Fundacion Plan21",
+  "description": "Free solution for regenerative agriculture",
+  "keywords": ["open-yvy", "plan21", "regenerative", "agriculture"],
+  "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/fundacionplan21/yvy-backend/issues"
+    "url": "https://github.com/Open-YvY/Backend-Open-YvY/issues"
   },
-  "homepage": "https://github.com/fundacionplan21/yvy-backend#readme",
+  "homepage": "https://github.com/Open-YvY/Backend-Open-YvY#readme",
   "dependencies": {
     "@types/axios": "^0.14.0",
     "@types/chai": "^4.3.3",
@@ -40,10 +38,6 @@
     "class-transformer": "^0.5.1",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-config-airbnb-typescript": "^17.0.0",
-    "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-simple-import-sort": "^10.0.0",
     "express": "^4.18.2",
     "http-status-codes": "^2.2.0",
     "ibm-cos-sdk": "^1.13.1",
@@ -59,8 +53,6 @@
     "typeorm": "^0.3.10"
   },
   "devDependencies": {
-    "@commitlint/cli": "^17.3.0",
-    "@commitlint/config-conventional": "^17.3.0",
     "@types/bcrypt": "^5.0.0",
     "@types/clamscan": "^2.0.6",
     "@types/cors": "^2.8.13",
@@ -68,15 +60,13 @@
     "@types/jsonwebtoken": "^8.5.9",
     "@types/multer": "^1.4.7",
     "@types/nodemailer": "^6.4.11",
-    "@typescript-eslint/eslint-plugin": "^5.40.1",
-    "@typescript-eslint/parser": "^5.40.1",
     "cross-env": "^7.0.3",
-    "eslint": "^8.26.0",
-    "eslint-config-prettier": "^8.5.0",
-    "husky": "^8.0.3",
     "nodemon": "^2.0.20",
     "prettier": "^2.7.1",
     "standard-version": "^9.5.0",
     "typescript": "^4.8.4"
+  },
+  "engines": {
+    "node": ">=18.19.0"
   }
 }
