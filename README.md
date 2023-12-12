@@ -279,16 +279,7 @@ Please take a look at the available endpoints until far.
 - [Organization User](./docs/userCooperative.endpoint.md)
 
 <!-- IMAGE SHIELDS -->
-[React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=008B4A
-[React-url]: https://reactjs.org/
-[Javascript.js]: https://img.shields.io/badge/Javascript-20232A?style=for-the-badge&logo=javascript&logoColor=008B4A
-[Javascript-url]: https://developer.mozilla.org/es/docs/Web/JavaScript
-[Redux.js]: https://img.shields.io/badge/Redux-20232A?style=for-the-badge&logo=redux&logoColor=008B4A
-[Redux-url]: https://es.redux.js.org/
-[Mui.js]: https://img.shields.io/badge/Mui-20232A?style=for-the-badge&logo=mui&logoColor=008B4A
-[Mui-url]: https://mui.com/
-[Axios.js]: https://img.shields.io/badge/Axios-20232A?style=for-the-badge&logo=axios&logoColor=008B4A
-[Axios-url]: https://axios-http.com/docs/intro
+
 [Node.js]: https://img.shields.io/badge/NodeJS-20232A?style=for-the-badge&logo=node.js&logoColor=008B4A
 [Node-url]: https://nodejs.org/en
 [PostgreSQL.js]: https://img.shields.io/badge/PostgreSQL-20232A?style=for-the-badge&logo=postgresql&logoColor=008B4A
