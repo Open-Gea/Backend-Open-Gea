@@ -1,5 +1,5 @@
 {
-  "name": "yvy-backend",
+  "name": "gea-backend",
   "version": "2.0.0",
   "scripts": {
     "build": "tsc -p .",
@@ -17,16 +17,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Open-YvY/Backend-Open-YvY"
+    "url": "git+https://github.com/Gea-Project/Backend-Gea"
   },
   "author": "Fundacion Plan21",
   "description": "Free solution for regenerative agriculture",
-  "keywords": ["open-yvy", "plan21", "regenerative", "agriculture"],
+  "keywords": ["gea-project", "plan21", "regenerative", "agriculture", "yvy"],
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/Open-YvY/Backend-Open-YvY/issues"
+    "url": "https://github.com/Gea-Project/Backend-Gea/issues"
   },
-  "homepage": "https://github.com/Open-YvY/Backend-Open-YvY#readme",
+  "homepage": "https://github.com/Gea-Project/Backend-Gea#readme",
   "dependencies": {
     "@types/axios": "^0.14.0",
     "@types/chai": "^4.3.3",

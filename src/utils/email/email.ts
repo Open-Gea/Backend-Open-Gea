@@ -5,7 +5,7 @@ import { randomToken  } from '../utils';
 
 const YVY_EMAIL = process.env.YVY_EMAIL;
 const YVY_PASSWORD = process.env.YVY_PASSWORD;
-const WF_RESET_PASSWORD_LINK = process.env.NODE_ENV ==='local' ? process.env.YVY_URL_LOCAL : process.env.YVY_URL;
+const WF_RESET_PASSWORD_LINK = process.env.NODE_ENV ==='local' ? process.env.GEA_URL_LOCAL : process.env.YVY_URL;
 
 export async function forgotPasswordEmail(user: User): Promise<string | Error> {
   let token = randomToken();
