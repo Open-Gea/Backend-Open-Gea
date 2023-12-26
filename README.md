@@ -81,15 +81,15 @@ Specifically these features in the Cloud:
 
 https:
 ```
-git clone https://github.com/open-gea/Backend-Gea.git
+git clone https://github.com/open-gea/Backend-Open-Gea.git
 ```
 or ssh:
 ```
-git clone git@github.com:open-gea/Backend-Gea.git
+git clone git@github.com:open-gea/Backend-Open-Gea.git
 ```
 
 ```
-cd gea-backend
+cd backend-open-gea
 ```
 
 ### Dependencies Installation
@@ -101,11 +101,11 @@ npm install
 
 ### Running the Backend Locally
 
-To set up and run the gea-backend for a local environment:
+To set up and run the backend-open-gea for a local environment:
 
 -  Create a new database for the project using Postgres. Database name must be equal to the environment key called *PG_DATABASE_LOCAL*
 
-- Create a `.env` file in the root directory of your `gea-backend` and populate with the following:
+- Create a `.env` file in the root directory of your `backend-open-gea` and populate with the following:
    
 ```js
 NODE_ENV=local # use it always in local unless you preffered to share a better cloud solution for gea
