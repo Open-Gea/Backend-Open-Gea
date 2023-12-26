@@ -2,7 +2,7 @@
 
 ## Origin in YvY
 
-n this project, you will see the word YvY many times. YvY means Earth in Guaraní, just like Gea in ancient Greek. YvY is the original, non-open source project from which Gea is inspired. 
+In this project, you will see the word YvY many times. YvY means Earth in Guaraní, just like Gea in ancient Greek. YvY is the original, non-open source project from which Gea is inspired. 
 
 ## Types of Users
 
