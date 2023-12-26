@@ -167,7 +167,7 @@ Now the user must set the new password with a similar approach than *Verifying E
 
 ## POST `/auth/contact-us`
 
-This endpoint send a message to the email administrator configured by YVY_EMAIL and a copy to the user email
+This endpoint send a message to the email administrator configured by GEA_EMAIL and a copy to the user email
 
 ### Example
 
@@ -175,7 +175,7 @@ This endpoint send a message to the email administrator configured by YVY_EMAIL 
 {
     "email": "gbeesey0@parallels.com",
     "name": "Gaile",
-    "message": "I want to be part of YvY",
+    "message": "I want to be part of Gea",
     "country": "Argentina"
 }
 ```

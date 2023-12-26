@@ -1,16 +1,20 @@
-# Open YvY - Back End v2.0.0
+# Open Gea - Back End v2.0.0
+
+## Origin in YvY
+
+In this project, you will see the word YvY many times. YvY means Earth in Guaraní, just like Gea in ancient Greek. YvY is the original, non-open source project from which Gea is inspired. 
 
 ## Types of Users
 
-   YvY offers two possibilities when registering:
+   Gea offers two possibilities when registering:
 
-- <b> Producer: </b> Control your farms, calculations such as water or carbon footprint, agronomic data, QR code, and among other functions available in YvY.
+- <b> Producer: </b> Control your farms, calculations such as water or carbon footprint, agronomic data, QR code, and among other functions available in Gea.
 
-- <b> Organization: </b> Control the members of your organization and their respective farms, calculations, georeferencing, among other functions available in YvY.
+- <b> Organization: </b> Control the members of your organization and their respective farms, calculations, georeferencing, among other functions available in Gea.
   
-Also, there is an admin role for developers and administrators of YvY:
+Also, there is an admin role for developers and administrators of Gea:
 
-- <b> Administrator: </b> Control the access to YvY, other general data and statistics.
+- <b> Administrator: </b> Control the access to Gea, other general data and statistics.
 
 ## Modules Available
 
@@ -46,6 +50,8 @@ And we have these modules available for Administrators:
 ## Project Roadmap
 
 Participation is welcomed from software developers, designers, testers, agronomists/agri experts/soil experts, IoT engineers, researchers, students, farmers, and others who can help improve the quality and value of the solution for small farmers around the world.
+
+Please check the issues to see how you can contribute to the project
    
 ### Technologies
 
@@ -56,7 +62,7 @@ External APIs:
 - API Weather.
 - API Meteostat.
 
-And for the Cloud (not available for open yvy), we are using :
+And for the Cloud (not available for Open Gea), we are using :
 * [![IBMCLOUD][IBMCLOUD.js]][IBMCLOUD-url]
 
 Specifically these features in the Cloud:
@@ -75,15 +81,15 @@ Specifically these features in the Cloud:
 
 https:
 ```
-git clone https://github.com/Open-YvY/Backend-Open-YvY.git
+git clone https://github.com/open-gea/Backend-Open-Gea.git
 ```
 or ssh:
 ```
-git clone git@github.com:Open-YvY/Backend-Open-YvY.git
+git clone git@github.com:open-gea/Backend-Open-Gea.git
 ```
 
 ```
-cd yvy-backend
+cd backend-open-gea
 ```
 
 ### Dependencies Installation
@@ -95,14 +101,14 @@ npm install
 
 ### Running the Backend Locally
 
-To set up and run the yvy-backend for a local environment:
+To set up and run the backend-open-gea for a local environment:
 
 -  Create a new database for the project using Postgres. Database name must be equal to the environment key called *PG_DATABASE_LOCAL*
 
-- Create a `.env` file in the root directory of your `yvy-backend` and populate with the following:
+- Create a `.env` file in the root directory of your `backend-open-gea` and populate with the following:
    
 ```js
-NODE_ENV=local # use it always in local unless you preffered to share a better cloud solution for yvy
+NODE_ENV=local # use it always in local unless you preffered to share a better cloud solution for gea
 BUILD= # must be undefinde unless you need to build the project and run it using node command in production
 PG_HOST_LOCAL= # The hostname (e.g., localhost)
 PG_PORT_LOCAL= # Server port (typically 5432)
@@ -111,14 +117,14 @@ PG_PASSWORD_LOCAL= # Password for the user
 PG_DATABASE_LOCAL= # Name of the database to connect to
 PORT= # Port number for your application server
 JWT_SECRET= # Secret key for JSON Web Tokens (can be whatever you like)
-YVY_URL_LOCAL= # http://localhost/{frontend-port} the port where yvy app will run in navigator locally
+GEA_URL_LOCAL= # http://localhost/{frontend-port} the port where gea app will run in navigator locally
 COUNTRIES_API=https://flagcdn.com #(open api)
 ```
 
 ### Special Indication for the rest of environments
 
 #### Mailing
-For mailing the yvy project use gmail service. 
+For mailing the Open Gea use gmail service. 
 You can use your own gmail account or change the mailing service by develope specific one accourding to your needs.
 
 Check out how to create your own gmail password app within your google account througth this [link](https://support.google.com/accounts/answer/185833?hl=en)
@@ -130,14 +136,14 @@ The modules that use mailing service are:
 * Contact Us
 
 ```js
-YVY_EMAIL= # Gmail Email address 
-YVY_PASSWORD= # Password for external app from gmail service
+GEA_EMAIL= # Gmail Email address 
+GEA_PASSWORD= # Password for external app from gmail service
 ``` 
 
 
 #### Cloud object storage
 
-For files manager he original yvy use Cloud Object Storage from IBM Cloud services.
+For files manager the original project (called yvy) use Cloud Object Storage from IBM Cloud services.
 
 Feel free to use the any other cloud object storage or change the [process-file middleware](./src/middlewares/processFiles.middleware.ts) by using another tech to storage files.
 
@@ -160,9 +166,9 @@ FILE_BUCKET= # Bucket name for file storage in the cloud
 
 ### Wheater
 
-YvY offers wheather info to their users by using the following the external service API Wheather
+Gea offers wheather info to their users by using the following the external service API Wheather
 
-Feel free to use another services or api's for these modules or contribute to the project by finding free services that allows the same values for open-yvy
+Feel free to use another services or api's for these modules or contribute to the project by finding free services that allows the same values for Open Gea
 
 Check the source code that use these keys:
 - [Api Wheater](./src/services/apiWeather/apiWeather.service.ts)
@@ -182,9 +188,9 @@ API_KEY_WEATHER= # api key to use the service
 
 ### Water Footprint
 
-YvY calculates the water footprint using an external service called METEOSTAT and adding special calculation in it's own source code.
+Gea calculates the water footprint using an external service called METEOSTAT and adding special calculation in it's own source code.
 
-Feel free to use another services or api's for these modules or contribute to the project by finding free services that allows the same values for open-yvy
+Feel free to use another services or api's for these modules or contribute to the project by finding free services that allows the same values for Open Gea
 
 Check the source code that use these keys:
 - [Water Footprint Calculation](./src/utils/calculoHuellaHidrica.ts)
@@ -211,7 +217,7 @@ You should see the message `Postgres Tables Created`. Check the tables in your p
 
 ### Init Countries List
 
-YvY use an official country list from an api. But to simplify, it get all the countries with their international code and english and spanish name and put it in their database, using the next script:
+Gea use an official country list from an api. But to simplify, it get all the countries with their international code and english and spanish name and put it in their database, using the next script:
 
 ```
 npm run countries-load

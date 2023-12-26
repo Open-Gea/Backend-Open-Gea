@@ -1,20 +1,20 @@
 import { randomToken } from "../utils";
 import nodemailer from 'nodemailer';
 import Mail from 'nodemailer/lib/mailer';
-const YVY_URL = process.env.NODE_ENV ==='local' ? process.env.YVY_URL_LOCAL : process.env.YVY_URL;
-const YVY_EMAIL = process.env.YVY_EMAIL;
-const YVY_PASSWORD = process.env.YVY_PASSWORD;
+const GEA_URL = process.env.NODE_ENV ==='local' ? process.env.GEA_URL_LOCAL : process.env.GEA_URL;
+const GEA_EMAIL = process.env.GEA_EMAIL;
+const GEA_PASSWORD = process.env.GEA_PASSWORD;
 
 export async function emailVerification(email: string, isCoop?: boolean) : Promise<string>{
     let token = randomToken();
-    let  splashPageLink = YVY_URL+'#/email-verification?token='+token+'&email='+email;
+    let  splashPageLink = GEA_URL+'#/email-verification?token='+token+'&email='+email;
     if(isCoop) splashPageLink += '&isCoop='+isCoop;
     const transporter = nodemailer.createTransport({
         service: "gmail",
         port: 587,
         auth: {
-          user: YVY_EMAIL,
-          pass: YVY_PASSWORD,
+          user: GEA_EMAIL,
+          pass: GEA_PASSWORD,
         },
         tls: {
           rejectUnauthorized: false
@@ -22,9 +22,9 @@ export async function emailVerification(email: string, isCoop?: boolean) : Promi
       });
     
       const mailOptions: Mail.Options = {
-        from: YVY_EMAIL,
+        from: GEA_EMAIL,
         to: email,
-        subject: 'YvY- Verificacion de Correo Electrónico',
+        subject: 'Gea- Verificacion de Correo Electrónico',
         html:
           `<!DOCTYPE html>
           <html>
@@ -72,9 +72,9 @@ export async function emailVerification(email: string, isCoop?: boolean) : Promi
                 <p>Para verificar este correo electrónico, por favor has click en este boton:</p>
                 <a class="button" href="${splashPageLink}" target="_blank">Verificar E-Mail</a>
                 <p>Este link expirará en 24 horas.</p>
-                <p>Si tienes alguna duda o comentario, por favor contactanos a ${YVY_EMAIL}.</p>
+                <p>Si tienes alguna duda o comentario, por favor contactanos a ${GEA_EMAIL}.</p>
                 <p>Muchas Gracias,</p>
-                <p>YvY Team</p>
+                <p>Gea Team</p>
               </div>
             </body>
           </html>
