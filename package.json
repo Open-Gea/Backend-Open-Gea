@@ -17,16 +17,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Gea-Project/Backend-Gea"
+    "url": "git+https://github.com/open-gea/Backend-Gea"
   },
   "author": "Fundacion Plan21",
   "description": "Free solution for regenerative agriculture",
-  "keywords": ["gea-project", "plan21", "regenerative", "agriculture", "yvy"],
+  "keywords": ["open-gea", "plan21", "regenerative", "agriculture", "yvy"],
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/Gea-Project/Backend-Gea/issues"
+    "url": "https://github.com/open-gea/Backend-Gea/issues"
   },
-  "homepage": "https://github.com/Gea-Project/Backend-Gea#readme",
+  "homepage": "https://github.com/open-gea/Backend-Gea#readme",
   "dependencies": {
     "@types/axios": "^0.14.0",
     "@types/chai": "^4.3.3",

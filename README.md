@@ -1,4 +1,4 @@
-# Gea Project - Back End v2.0.0
+# Open Gea - Back End v2.0.0
 
 ## Origin in YvY
 
@@ -62,7 +62,7 @@ External APIs:
 - API Weather.
 - API Meteostat.
 
-And for the Cloud (not available for gea project), we are using :
+And for the Cloud (not available for Open Gea), we are using :
 * [![IBMCLOUD][IBMCLOUD.js]][IBMCLOUD-url]
 
 Specifically these features in the Cloud:
@@ -81,11 +81,11 @@ Specifically these features in the Cloud:
 
 https:
 ```
-git clone https://github.com/Gea-Project/Backend-Gea.git
+git clone https://github.com/open-gea/Backend-Gea.git
 ```
 or ssh:
 ```
-git clone git@github.com:Gea-Project/Backend-Gea.git
+git clone git@github.com:open-gea/Backend-Gea.git
 ```
 
 ```
@@ -124,7 +124,7 @@ COUNTRIES_API=https://flagcdn.com #(open api)
 ### Special Indication for the rest of environments
 
 #### Mailing
-For mailing the gea project use gmail service. 
+For mailing the Open Gea use gmail service. 
 You can use your own gmail account or change the mailing service by develope specific one accourding to your needs.
 
 Check out how to create your own gmail password app within your google account througth this [link](https://support.google.com/accounts/answer/185833?hl=en)
@@ -168,7 +168,7 @@ FILE_BUCKET= # Bucket name for file storage in the cloud
 
 Gea offers wheather info to their users by using the following the external service API Wheather
 
-Feel free to use another services or api's for these modules or contribute to the project by finding free services that allows the same values for gea project
+Feel free to use another services or api's for these modules or contribute to the project by finding free services that allows the same values for Open Gea
 
 Check the source code that use these keys:
 - [Api Wheater](./src/services/apiWeather/apiWeather.service.ts)
@@ -190,7 +190,7 @@ API_KEY_WEATHER= # api key to use the service
 
 Gea calculates the water footprint using an external service called METEOSTAT and adding special calculation in it's own source code.
 
-Feel free to use another services or api's for these modules or contribute to the project by finding free services that allows the same values for gea project
+Feel free to use another services or api's for these modules or contribute to the project by finding free services that allows the same values for Open Gea
 
 Check the source code that use these keys:
 - [Water Footprint Calculation](./src/utils/calculoHuellaHidrica.ts)
