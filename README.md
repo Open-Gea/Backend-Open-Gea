@@ -262,6 +262,9 @@ npm run dev
 
 ## Contributors
 
+<a href="https://github.com/Open-Gea/Backend-Open-Gea/graphs/contributors">
+  <img src="https://contributors-img.web.app/image?repo=Open-Gea/Backend-Open-Gea" />
+</a>
 
 ## Contributing
 
